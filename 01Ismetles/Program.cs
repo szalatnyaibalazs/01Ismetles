@@ -30,7 +30,21 @@ namespace _01Ismetles
                 return 2;
             }
         }
-
+        static void eredmenykiiras(int gep ,int ember)
+        {
+            switch (EmberNyer(gep,ember))
+            {
+                case 0:
+                    Console.WriteLine("Döntetlen!");
+                    break;
+                case 1:
+                    Console.WriteLine("Skynet nyert!");
+                    break;
+                case 2:
+                    Console.WriteLine("Játékos nyert!");
+                    break;
+            }
+        }
         static void Main()
         {
             Random vel = new Random();
@@ -47,19 +61,8 @@ namespace _01Ismetles
             Console.WriteLine("Gép: {0} --- Játékos: {1}",
                                 lehetoseg[gepValasz], lehetoseg[jatekosValasz]
                     );
-            
-            switch (EmberNyer(gepValasz, jatekosValasz))
-            {
-                case 0:
-                    Console.WriteLine("Döntetlen!");
-                    break;
-                case 1:
-                    Console.WriteLine("Skynet nyert!");
-                    break;
-                case 2:
-                    Console.WriteLine("Játékos nyert!");
-                    break;
-            }
+
+            eredmenykiiras(gepValasz,jatekosValasz);
 
             Console.ReadKey();
         }
