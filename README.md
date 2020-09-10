@@ -18,7 +18,7 @@
    - Kiírás külön metódusban 
  ## Játékmenet 2.0
 - [x] Addig játszunk amíg ki nem lépünk a játékból
-- [] Statisztika megvalósítása
+- [x] Statisztika megvalósítása
  - Gép
  - Játékos
  - Hány menet volt
