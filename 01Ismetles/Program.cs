@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace _01Ismetles
 {
@@ -82,9 +83,17 @@ namespace _01Ismetles
                 return false;
             }
         }
+        private static void StatisztikaKiiras()
+        {
+            Console.WriteLine("Menetek száma:{0} " +
+                "\tJátékos nyert:{1} " +
+                "\tGép nyert:{2}", Menet, jatekosNyer, gepNyer);
+        }
+
         static void Main()
         {
 
+            statisztikaFajlbol();
 
             bool tovabb = true;
 
@@ -100,17 +109,27 @@ namespace _01Ismetles
 
                 tovabb = akarJatszani();
             }
-
+            
             StatisztikaKiiras();
 
             Console.ReadKey();
         }
 
-        private static void StatisztikaKiiras()
+        private static void statisztikaFajlbol()
         {
-            Console.WriteLine("Menetek száma:{0} " +
-                "\nJátékos nyert:{1} " +
-                "\nGép nyert:{2}",Menet,jatekosNyer,gepNyer);
+            StreamReader stat = new StreamReader("Statisztika.txt");
+            while (!stat.EndOfStream)
+            {
+                string[] sor = stat.ReadLine().Split(';');
+                int[] adat = new int[3];
+                for (int i = 0; i < adat.Length; i++)
+                {
+                    adat[i] = int.Parse(sor[i]);
+                }
+                Console.WriteLine("{0} {1} {2}",adat[0],adat[1],adat[2]);
+            }
+            stat.Close();
+            Console.WriteLine("------------------>Statisztika vége<------------------");
         }
     }
 }

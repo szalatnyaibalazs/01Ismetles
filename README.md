@@ -22,3 +22,8 @@
  - Gép
  - Játékos
  - Hány menet volt
+- [] Eredmények fájlba írása és megjelenítése
+ - Menet -> 1.éerték
+ - Játékos -> 2.érték
+ - Gép -> 3.érték
+ - Értékek ; elválsztva
