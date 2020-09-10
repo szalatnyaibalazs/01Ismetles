@@ -8,7 +8,7 @@
 	- Papír legyőzi a Követ
 	- Olló legyőzi a Papírt
 
-	[] A nyerés megállapítását kiszerverzzük metódusba
+	[x] A nyerés megállapítását kiszerverzzük metódusba
 	- EmberNyer()
     - visszaadott érték -> 0, 1, 2
     - 0: Döntetlen
@@ -17,4 +17,8 @@
 - [x] Kiírjuk az eredményt
    - Kiírás külön metódusban 
  ## Játékmenet 2.0
-[] Addig játszunk amíg ki nem lépünk a játékból
+- [x] Addig játszunk amíg ki nem lépünk a játékból
+- [] Statisztika megvalósítása
+ - Gép
+ - Játékos
+ - Hány menet volt
