@@ -9,7 +9,7 @@ namespace _01Ismetles
     class Program
     {
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
-
+        
         static int jatekoValasztas()
         {
             Console.WriteLine("Kő (0), Papír (1), Olló (2)");
@@ -60,19 +60,42 @@ namespace _01Ismetles
                     break;
             }
         }
+        private static bool akarJatszani()
+        {
+            Console.WriteLine("-------------------------------------------------------------------------------");
+            Console.Write("Tovább [i/n]?");
+            string valasz = Console.ReadLine().ToLower();
+            Console.WriteLine("\n-------------------------------------------------------------------------------");
+            if (valasz == "i")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         static void Main()
         {
 
 
+            bool tovabb = true;
 
-            int gepValasz = gepValasztas();
-            int jatekosValasz = jatekoValasztas();
+            while (tovabb)
+            {
+                int gepValasz = gepValasztas();
 
+                int jatekosValasz = jatekoValasztas();
 
-            eredmenykiiras(gepValasz,jatekosValasz);
+                eredmenykiiras(gepValasz, jatekosValasz);
+
+                tovabb = akarJatszani();
+            }
 
 
             Console.ReadKey();
         }
+
+        
     }
 }
