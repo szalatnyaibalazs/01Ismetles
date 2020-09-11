@@ -90,6 +90,18 @@ namespace _01Ismetles
                 "\tGép nyert:{2}", Menet, jatekosNyer, gepNyer);
         }
 
+        private static void StatisztikaFajlba()
+        {
+            string adat = Menet.ToString() + ";" +
+                jatekosNyer.ToString() + ";" +
+                gepNyer.ToString() + ";";
+            /*FileStream ki = new FileStream("Statisztika.txt", FileMode.Append);
+            StreamWriter sKi = new StreamWriter(ki);
+            sKi.WriteLine(adat);*/
+            StreamWriter sKi = new StreamWriter("Statisztika.txt", true);
+            sKi.WriteLine(adat);
+            sKi.Close();
+        }
         static void Main()
         {
 
@@ -112,8 +124,12 @@ namespace _01Ismetles
             
             StatisztikaKiiras();
 
+            StatisztikaFajlba();
+
             Console.ReadKey();
         }
+
+
 
         private static void statisztikaFajlbol()
         {
